@@ -1,0 +1,28 @@
+{
+  "add-field-type":{
+     "name":"names_general",
+     "class":"solr.TextField",
+     "indexAnalyzer":{
+     	"charFilter":{"class":"solr.HTMLStripCharFilterFactory"},
+        "tokenizer":{"class":"solr.StandardTokenizerFactory"},
+     	"filter":{class:"solr.LowerCaseFilterFactory"}
+     },
+     "queryAnalyzer":{
+     	"charFilter":{"class":"solr.HTMLStripCharFilterFactory"},
+        "tokenizer":{"class":"solr.StandardTokenizerFactory" },
+        "filter":{class:"solr.LowerCaseFilterFactory"}
+      }
+    },
+ "add-field-type":{
+     "name":"email_general",
+     "class":"solr.TextField",
+     "indexAnalyzer":{
+        "tokenizer":{"class":"solr.UAX29URLEmailTokenizerFactory"},
+     	"filter":{"class":"solr.LowerCaseFilterFactory"}
+     },
+     "queryAnalyzer":{
+        "tokenizer":{"class":"solr.UAX29URLEmailTokenizerFactory" },
+        "filter":{"class":"solr.LowerCaseFilterFactory"}
+      }
+    }
+}
